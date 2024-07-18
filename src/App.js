@@ -1,12 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 import { AppProvider } from './context/AppContext';
 import Budget from './components/Budget';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
-import Remaining from './components/Remaining'; // Corrected import
+import Remaining from './components/Remaining';
+import CurrencyDropdown from './components/CurrencyDropdown';
 
 const App = () => {
     return (
@@ -14,18 +16,23 @@ const App = () => {
             <div className='container'>
                 <h1 className='mt-3'>Company's Budget Allocation</h1>
                 <div className='row mt-3'>
-                    <div className='col-sm'>
+                    <div className='col-sm-4'>
                         <Budget />
                     </div>
-                    <div className='col-sm'>
-                        <Remaining /> {/* Corrected usage */}
+                    <div className='col-sm-4'>
+                        <Remaining />
                     </div>
-                    <div className='col-sm'>
+                    <div className='col-sm-4'>
                         <ExpenseTotal />
                     </div>
                 </div>
+                <div className='row mt-3'>
+                    <div className='col-sm-4'>
+                        <CurrencyDropdown />
+                    </div>
+                </div>
                 <h3 className='mt-3'>Allocation</h3>
-                <div className='row '>
+                <div className='row'>
                     <div className='col-sm'>
                         <ExpenseList />
                     </div>
@@ -33,7 +40,7 @@ const App = () => {
                 <h3 className='mt-3'>Change allocation</h3>
                 <div className='row mt-3'>
                     <div className='col-sm'>
-                        <AllocationForm/>
+                        <AllocationForm />
                     </div>
                 </div>
             </div>
